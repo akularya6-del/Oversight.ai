@@ -1,0 +1,272 @@
+<testsuites id="" name="" tests="15" failures="5" skipped="0" errors="0" time="24.394116999999998">
+<testsuite name="dashboard.spec.ts" timestamp="2026-06-30T15:15:33.527Z" hostname="chromium" tests="1" failures="1" skipped="0" time="10.655" errors="0">
+<testcase name="Dashboard (Authenticated) › should load the dashboard components" classname="dashboard.spec.ts" time="10.655">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-chromium/error-context.md]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › dashboard.spec.ts:31:7 › Dashboard (Authenticated) › should load the dashboard components 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('input[name="username"]')
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('input[name="username"]')
+
+
+      14 |
+      15 |     // If TEST_MODE is working, this form will be visible
+    > 16 |     await expect(usernameInput).toBeVisible({ timeout: 10000 });
+         |                                 ^
+      17 |     
+      18 |     // 3. Login
+      19 |     await usernameInput.fill('testuser');
+        at /Users/racoon/Documents/antigravity/wise-curie/tests/e2e/dashboard.spec.ts:16:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-chromium/error-context.md
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="landing.spec.ts" timestamp="2026-06-30T15:15:33.527Z" hostname="chromium" tests="2" failures="0" skipped="0" time="2.398" errors="0">
+<testcase name="Landing Page › should load and display hero content" classname="landing.spec.ts" time="1.062">
+</testcase>
+<testcase name="Landing Page › should pass accessibility checks" classname="landing.spec.ts" time="1.336">
+</testcase>
+</testsuite>
+<testsuite name="dashboard.spec.ts" timestamp="2026-06-30T15:15:33.527Z" hostname="firefox" tests="1" failures="1" skipped="0" time="10.862" errors="0">
+<testcase name="Dashboard (Authenticated) › should load the dashboard components" classname="dashboard.spec.ts" time="10.862">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-firefox/error-context.md]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [firefox] › dashboard.spec.ts:31:7 › Dashboard (Authenticated) › should load the dashboard components 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('input[name="username"]')
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('input[name="username"]')
+
+
+      14 |
+      15 |     // If TEST_MODE is working, this form will be visible
+    > 16 |     await expect(usernameInput).toBeVisible({ timeout: 10000 });
+         |                                 ^
+      17 |     
+      18 |     // 3. Login
+      19 |     await usernameInput.fill('testuser');
+        at /Users/racoon/Documents/antigravity/wise-curie/tests/e2e/dashboard.spec.ts:16:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-firefox/error-context.md
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="landing.spec.ts" timestamp="2026-06-30T15:15:33.527Z" hostname="firefox" tests="2" failures="0" skipped="0" time="3.719" errors="0">
+<testcase name="Landing Page › should load and display hero content" classname="landing.spec.ts" time="1.529">
+</testcase>
+<testcase name="Landing Page › should pass accessibility checks" classname="landing.spec.ts" time="2.19">
+</testcase>
+</testsuite>
+<testsuite name="dashboard.spec.ts" timestamp="2026-06-30T15:15:33.527Z" hostname="webkit" tests="1" failures="1" skipped="0" time="11.031" errors="0">
+<testcase name="Dashboard (Authenticated) › should load the dashboard components" classname="dashboard.spec.ts" time="11.031">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-webkit/error-context.md]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [webkit] › dashboard.spec.ts:31:7 › Dashboard (Authenticated) › should load the dashboard components 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('input[name="username"]')
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('input[name="username"]')
+
+
+      14 |
+      15 |     // If TEST_MODE is working, this form will be visible
+    > 16 |     await expect(usernameInput).toBeVisible({ timeout: 10000 });
+         |                                 ^
+      17 |     
+      18 |     // 3. Login
+      19 |     await usernameInput.fill('testuser');
+        at /Users/racoon/Documents/antigravity/wise-curie/tests/e2e/dashboard.spec.ts:16:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-webkit/error-context.md
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="landing.spec.ts" timestamp="2026-06-30T15:15:33.527Z" hostname="webkit" tests="2" failures="0" skipped="0" time="2.961" errors="0">
+<testcase name="Landing Page › should load and display hero content" classname="landing.spec.ts" time="1.165">
+</testcase>
+<testcase name="Landing Page › should pass accessibility checks" classname="landing.spec.ts" time="1.796">
+</testcase>
+</testsuite>
+<testsuite name="dashboard.spec.ts" timestamp="2026-06-30T15:15:33.527Z" hostname="Mobile Chrome" tests="1" failures="1" skipped="0" time="10.397" errors="0">
+<testcase name="Dashboard (Authenticated) › should load the dashboard components" classname="dashboard.spec.ts" time="10.397">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-Mobile-Chrome/video.webm]]
+
+[[ATTACHMENT|test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-Mobile-Chrome/error-context.md]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [Mobile Chrome] › dashboard.spec.ts:31:7 › Dashboard (Authenticated) › should load the dashboard components 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('input[name="username"]')
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('input[name="username"]')
+
+
+      14 |
+      15 |     // If TEST_MODE is working, this form will be visible
+    > 16 |     await expect(usernameInput).toBeVisible({ timeout: 10000 });
+         |                                 ^
+      17 |     
+      18 |     // 3. Login
+      19 |     await usernameInput.fill('testuser');
+        at /Users/racoon/Documents/antigravity/wise-curie/tests/e2e/dashboard.spec.ts:16:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-Mobile-Chrome/error-context.md
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="landing.spec.ts" timestamp="2026-06-30T15:15:33.527Z" hostname="Mobile Chrome" tests="2" failures="0" skipped="0" time="1.68" errors="0">
+<testcase name="Landing Page › should load and display hero content" classname="landing.spec.ts" time="0.67">
+</testcase>
+<testcase name="Landing Page › should pass accessibility checks" classname="landing.spec.ts" time="1.01">
+</testcase>
+</testsuite>
+<testsuite name="dashboard.spec.ts" timestamp="2026-06-30T15:15:33.527Z" hostname="Mobile Safari" tests="1" failures="1" skipped="0" time="10.673" errors="0">
+<testcase name="Dashboard (Authenticated) › should load the dashboard components" classname="dashboard.spec.ts" time="10.673">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-Mobile-Safari/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-Mobile-Safari/video.webm]]
+
+[[ATTACHMENT|test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-Mobile-Safari/error-context.md]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [Mobile Safari] › dashboard.spec.ts:31:7 › Dashboard (Authenticated) › should load the dashboard components 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('input[name="username"]')
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('input[name="username"]')
+
+
+      14 |
+      15 |     // If TEST_MODE is working, this form will be visible
+    > 16 |     await expect(usernameInput).toBeVisible({ timeout: 10000 });
+         |                                 ^
+      17 |     
+      18 |     // 3. Login
+      19 |     await usernameInput.fill('testuser');
+        at /Users/racoon/Documents/antigravity/wise-curie/tests/e2e/dashboard.spec.ts:16:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-Mobile-Safari/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../../test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-Mobile-Safari/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../test-results/dashboard-Dashboard-Authen-c1155-ad-the-dashboard-components-Mobile-Safari/error-context.md
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="landing.spec.ts" timestamp="2026-06-30T15:15:33.527Z" hostname="Mobile Safari" tests="2" failures="0" skipped="0" time="1.878" errors="0">
+<testcase name="Landing Page › should load and display hero content" classname="landing.spec.ts" time="0.813">
+</testcase>
+<testcase name="Landing Page › should pass accessibility checks" classname="landing.spec.ts" time="1.065">
+</testcase>
+</testsuite>
+</testsuites>

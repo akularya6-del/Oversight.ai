@@ -3,25 +3,58 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #09090B;
+  --foreground: #FAFAFA;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  background-image: radial-gradient(circle at center, #27272a 1px, transparent 1px);
+  background-size: 16px 16px;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@layer components {
+  /* Minimalist Elegant Surfaces */
+  .elegant-card {
+    @apply bg-white border border-slate-100/50 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)];
+  }
+  
+  .elegant-card-inner {
+    @apply bg-slate-50 border border-slate-100 shadow-inner rounded-xl;
+  }
+
+  /* High-contrast Buttons */
+  .btn-primary {
+    @apply bg-[#111113] text-white font-medium px-6 py-2.5 rounded-xl border border-transparent shadow-lg shadow-black/10 hover:shadow-xl hover:bg-black hover:scale-[1.02] transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-slate-800 font-medium px-6 py-2.5 rounded-xl border border-slate-200 shadow-sm hover:shadow hover:border-slate-300 transition-all duration-300;
+  }
+}
+
+/* Optional subtle background pattern mimicking the waveform dots */
+.bg-dotted-pattern {
+  background-image: radial-gradient(circle at center, #E2E8F0 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+/* Zen Paper Texture */
+.paper-texture {
+  background-color: #FAFAFA; /* Cream/beige paper base */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+.zen-gold-text {
+  background: linear-gradient(135deg, #A88647 0%, #C9A96E 50%, #8B6B2B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
