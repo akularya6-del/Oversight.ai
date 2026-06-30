@@ -53,17 +53,31 @@ export class Orchestrator {
              !skippedNodes.has(n.name)
       );
 
+      // Find nodes blocked by failed dependencies
+      const blockedNodes = pendingNodes.filter(node =>
+        node.dependencies.some(dep => failedNodes.has(dep))
+      );
+
+      blockedNodes.forEach(node => {
+        failedNodes.add(node.name);
+        state.errors[node.name] = new Error("Dependency failed");
+        this.onEvent?.(node.name, "failed", "Dependency failed");
+      });
+
+      // Recalculate pending after removing blocked
+      const remainingPending = pendingNodes.filter(node => !blockedNodes.includes(node));
+
       // Check if we are done
-      if (pendingNodes.length === 0 && activeNodes.size === 0) {
+      if (remainingPending.length === 0 && activeNodes.size === 0) {
         return; // Graph execution complete
       }
 
       // Check if we are deadlocked
-      if (pendingNodes.length > 0 && activeNodes.size === 0) {
-        throw new Error(`DAG Deadlock detected. Pending nodes: ${pendingNodes.map(n => n.name).join(", ")}`);
+      if (remainingPending.length > 0 && activeNodes.size === 0) {
+        throw new Error(`DAG Deadlock detected. Pending nodes: ${remainingPending.map(n => n.name).join(", ")}`);
       }
 
-      const readyNodes = pendingNodes.filter(node => 
+      const readyNodes = remainingPending.filter(node => 
         // A node is ready if ALL its dependencies are in the completed or skipped sets
         node.dependencies.every(dep => completedNodes.has(dep) || skippedNodes.has(dep))
       );
@@ -110,9 +124,8 @@ export class Orchestrator {
           state.errors[node.name] = error;
           failedNodes.add(node.name);
           this.onEvent?.(node.name, "failed", error.message || "Execution failed");
-          // If a node fails, the graph execution should halt or handle it.
-          // For now, we throw to abort the DAG.
-          throw error;
+          // The cascading logic will handle dependent nodes.
+          // return evaluateGraph(); // do not throw, just trigger next evaluation
         } finally {
           activeNodes.delete(node.name);
         }

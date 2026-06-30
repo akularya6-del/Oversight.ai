@@ -105,7 +105,11 @@ export async function POST(req: NextRequest) {
 
           sendEvent({
             type: 'result',
-            actions: stagedActions
+            actions: stagedActions,
+            errors: finalState && finalState.errors ? Object.keys(finalState.errors).map(k => ({
+              node: k,
+              message: finalState!.errors![k].message
+            })) : []
           });
           controller.close();
         } catch (error: any) {

@@ -25,7 +25,7 @@ test.describe('Dashboard (Authenticated)', () => {
     await page.goto('/dashboard');
     
     // Check for dashboard skeleton or main UI
-    await expect(page.getByText('QA Test User')).toBeVisible({ timeout: 15000 });
+    await expect(page.getByText('Action Queue')).toBeVisible({ timeout: 15000 });
   });
 
   test('should load the dashboard components', async ({ page }) => {

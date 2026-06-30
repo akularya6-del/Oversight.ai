@@ -9,8 +9,7 @@ test.describe('Landing Page', () => {
     await expect(page.getByText('Oversight', { exact: true })).toBeVisible();
     await expect(page.getByText('Never drop a commitment')).toBeVisible();
     
-    // The "Sign up" button
-    const getStartedBtn = page.getByRole('button', { name: /Sign up/i });
+    const getStartedBtn = page.getByRole('link', { name: /Experience Demo/i }).first();
     await expect(getStartedBtn).toBeVisible();
   });
 

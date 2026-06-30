@@ -139,7 +139,7 @@ export function ApprovalQueue({ mode = "live" }: ApprovalQueueProps) {
             // Revert to idle after 3 seconds
             setTimeout(() => {
               setState("idle");
-              setMessage("Monitoring quietly in the background.");
+              setMessage("Monitoring your inbox.");
             }, 4000);
           });
       }
@@ -200,7 +200,7 @@ export function ApprovalQueue({ mode = "live" }: ApprovalQueueProps) {
       // Revert intelligence state back to idle if queue is empty
       setTimeout(() => {
          setState("idle");
-         setMessage("Monitoring quietly in the background.");
+         setMessage("Monitoring your inbox.");
          setInsight(null);
       }, 3000);
     }, 5000);
@@ -228,7 +228,7 @@ export function ApprovalQueue({ mode = "live" }: ApprovalQueueProps) {
           }
           toast.info("Action undone.");
           setState("idle");
-          setMessage("Monitoring quietly in the background.");
+          setMessage("Monitoring your inbox.");
           setInsight(null);
         }
       }

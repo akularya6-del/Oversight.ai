@@ -79,7 +79,7 @@ function StatChip({ label, value, icon, color }: {
 }
 
 function InsightPill({ insight }: { insight: BriefInsight }) {
-  const meta = INSIGHT_META[insight.type];
+  const meta = INSIGHT_META[insight.type] ?? INSIGHT_META.info;
   return (
     <div className={`flex items-start gap-2 px-3 py-2.5 rounded-lg border text-xs font-medium ${meta.color}`}>
       {meta.icon}
@@ -90,8 +90,8 @@ function InsightPill({ insight }: { insight: BriefInsight }) {
 
 function EmailCard({ card, query }: { card: BriefEmailCard; query: string }) {
   const [expanded, setExpanded] = useState(false);
-  const cat = CATEGORY_META[card.category];
-  const pri = PRIORITY_META[card.priority];
+  const cat = CATEGORY_META[card.category] ?? CATEGORY_META.other;
+  const pri = PRIORITY_META[card.priority] ?? PRIORITY_META.normal;
 
   const highlight = (text: string) => {
     if (!query.trim()) return text;
@@ -342,7 +342,7 @@ export function DailyBrief({ userName, isDemo = false }: DailyBriefProps) {
     return (
       <div className="text-center py-16">
         <AlertTriangle className="w-8 h-8 text-red-400 mx-auto mb-3" />
-        <p className="text-sm text-slate-400">Failed to load your brief</p>
+        <p className="text-sm text-slate-400">We couldn&apos;t generate today&apos;s briefing.</p>
         <button
           onClick={() => fetchBrief()}
           className="mt-4 text-xs text-emerald-400 hover:text-emerald-300 transition-colors"
