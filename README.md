@@ -1,52 +1,172 @@
-# Oversight.ai
+<div align="center">
+  <h1 align="center">Oversight.Ai</h1>
+  <p align="center">
+    <strong>Proactive AI executive assistant — monitors Gmail and Calendar, detects missed commitments, resolves them via an 11-stage multi-agent DAG powered by Gemini</strong>
+  </p>
+  <p align="center">
+    <!-- Badges -->
+    <img src="https://img.shields.io/github/license/akularya6-del/Oversight.ai?style=flat-square&color=00F0FF" alt="License" />
+    <img src="https://img.shields.io/github/stars/akularya6-del/Oversight.ai?style=flat-square&color=a277ff" alt="Stars" />
+    <img src="https://img.shields.io/github/forks/akularya6-del/Oversight.ai?style=flat-square&color=00F0FF" alt="Forks" />
+    <img src="https://img.shields.io/github/issues/akularya6-del/Oversight.ai?style=flat-square&color=a277ff" alt="Issues" />
+  </p>
+</div>
 
-**Proactive AI Productivity Engine**
+---
 
-Oversight.ai monitors your Gmail and Calendar, detects missed commitments, and executes resolutions with one click — powered by a multi-agent orchestrated pipeline on Gemini.
+## 📖 Project Overview
+Proactive AI executive assistant — monitors Gmail and Calendar, detects missed commitments, resolves them via an 11-stage multi-agent DAG powered by Gemini
 
-## Why We Built It
-Productivity tools traditionally wait for user input. Oversight flips this paradigm. It uses an autonomous 11-stage pipeline (Planner -> Context -> Memory -> Reasoning -> Priority -> Research -> Tool Selection -> Execution -> Verification -> Reflection) to analyze your digital exhaust (emails, calendar) and surface high-confidence, actionable resolutions.
+This repository contains the source code and configuration for `Oversight.Ai`. 
 
-## Architecture
+> [!NOTE]  
+> **Live Demo:** [Link to Live Demo if applicable]  
+> **Documentation:** [Link to Docs if applicable]
 
-At its core, Oversight.ai is not a wrapper around a single LLM call. It is a strictly typed, **Parallel Directed Acyclic Graph (DAG)** of specialized agents designed to execute concurrently for minimum latency.
+---
+
+## ✨ Key Features
+- **[Feature 1]**: [Describe a core feature]
+- **[Feature 2]**: [Describe another core feature]
+- **[Feature 3]**: [Describe a third core feature]
+
+---
+
+## 📸 Screenshots & Demos
+> [!IMPORTANT]
+> Replace the placeholders below with actual images or GIFs demonstrating the project.
+
+| Dashboard/UI | CLI/Terminal Output |
+| :---: | :---: |
+| <img src="https://placehold.co/600x400/252525/00F0FF?text=Screenshot+1" width="400" /> | <img src="https://placehold.co/600x400/252525/a277ff?text=Screenshot+2" width="400" /> |
+
+---
+
+## 🏗️ Architecture & Folder Structure
 
 ```mermaid
-graph TD
-    A[Raw Payload] --> B(Sanitization Agent)
-    B --> C(Planner Agent)
-    B --> D(Context Extractor)
-    B --> P(PreBriefing Agent)
-    C --> E(Memory Hydration)
-    D --> E
-    P --> E
-    E --> F(Reasoning Agent)
-    F --> G{Commitments Found?}
-    G -- Yes --> H(Priority Agent)
-    G -- No --> X((End))
-    H --> I(Tool Selection)
-    I --> J(Verified Execution)
-    J --> K(Reflection Agent)
-    K -- High Confidence --> L[Staged Action Output]
-    K -- Low Confidence --> C
+graph TD;
+    Client-->API;
+    API-->Database;
+    API-->ExternalServices;
 ```
 
-## Setup & Deployment
+<details>
+<summary><b>View Folder Structure</b></summary>
 
-1. Clone the repository.
-2. Run `npm install`.
-3. Set your environment variables (see `.env.example`).
-4. Run `npm run dev`.
+```text
+Oversight.ai/
+├── src/                  # Source code
+│   ├── components/       # UI Components
+│   ├── api/              # API endpoints/routes
+│   └── utils/            # Helper functions
+├── tests/                # Unit and integration tests
+├── public/               # Static assets
+├── .env.example          # Environment variables template
+├── package.json          # Project dependencies (or requirements.txt/Cargo.toml)
+└── README.md             # Project documentation
+```
+</details>
 
-*For full deployment instructions, see `ARCHITECTURE.md`.*
+---
 
-## Tech Stack
-- **Framework:** Next.js 14 App Router
-- **AI/ML:** Google Gemini 2.5 (via Vertex AI / GenAI SDK)
-- **Agents:** Custom strictly-typed DAG Orchestrator
-- **Auth:** NextAuth (Google OAuth)
-- **UI:** Tailwind CSS, Framer Motion, Lucide React
-- **Observability:** Custom real-time tracing pipeline with Mission Control UI
+## 💻 Tech Stack
+- **Primary Language:** HTML
+- **Tags/Technologies:** `ai-agents`, `gmail`, `google-calendar`, `google-gemini`, `multi-agent`, `nextjs`, `typescript`
 
-## Team Omega
-Built by a simulated collective of elite engineers, designers, and AI researchers.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js / Python / Docker (depending on stack)
+- [PLACEHOLDER: Add specific versions]
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/akularya6-del/Oversight.ai.git
+   cd Oversight.ai
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   # [PLACEHOLDER: Update with correct install command e.g., npm install or pip install]
+   npm install
+   ```
+
+3. **Environment Setup:**
+   ```bash
+   cp .env.example .env
+   # [PLACEHOLDER: Fill in the required environment variables in the .env file]
+   ```
+
+4. **Run locally:**
+   ```bash
+   # [PLACEHOLDER: Update with correct run command e.g., npm run dev]
+   npm run dev
+   ```
+
+---
+
+## 🔧 Configuration & Environment Variables
+
+| Variable Name | Description | Required |
+|---------------|-------------|:--------:|
+| `GOOGLE_CLIENT_ID` | Config value | ✅ |
+| `GOOGLE_CLIENT_SECRET` | Config value | ✅ |
+| `NEXTAUTH_SECRET` | Config value | ✅ |
+| `NEXTAUTH_URL` | Config value | ✅ |
+| `GEMINI_API_KEY` | Config value | ✅ |
+| `KV_REST_API_URL` | Config value | ✅ |
+| `KV_REST_API_TOKEN` | Config value | ✅ |
+| `CRON_SECRET` | Config value | ✅ |
+
+---
+
+## 🧪 Testing
+```bash
+# [PLACEHOLDER: Add testing command]
+npm run test
+```
+
+## 📈 Performance & Security Notes
+- **Performance**: [PLACEHOLDER: Describe caching, CDN, or DB indexing strategies used]
+- **Security**: [PLACEHOLDER: Describe auth, encryption, or CORS policies]
+
+---
+
+## 🐛 Known Issues & Troubleshooting
+- **Issue**: [PLACEHOLDER: Known issue 1]
+  - *Fix*: [PLACEHOLDER: How to resolve it]
+
+---
+
+## 🗺️ Roadmap & Future Improvements
+- [ ] Add comprehensive E2E testing.
+- [ ] Implement CI/CD pipeline using GitHub Actions.
+- [ ] [PLACEHOLDER: Add a domain-specific future improvement]
+
+---
+
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome! 
+Feel free to check the [issues page](https://github.com/akularya6-del/Oversight.ai/issues).
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📜 License
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+## 🙏 Acknowledgements
+- [PLACEHOLDER: Name of library or inspiration]
